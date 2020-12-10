@@ -59,7 +59,7 @@ var score = 0;
 var wave = 1;
 
 //timer for wave 3.
-var timer = 10;
+var timer = 15;
 
 //level.
 var level = 1;
@@ -119,52 +119,53 @@ function setup() {
   //move it upwards.
   space = createSprite(0, 0, width, height);
   space.addImage(space_back);
-  space.scale = 2
+  space.scale = 1
   space.velocityY = 4;
 
 
   //create buttons.
   //create a left button sprite and set an image.
-  left_but = createSprite(width - 1470, height - 150, 20, 20);
-  left_but.scale = 0.4;
+  left_but = createSprite(width - 500, height - 150, 20, 20);
+  left_but.scale = 0.1;
   left_but.addImage(left_but_img)
 
   //create a right button sprite and set an image.
-  right_but = createSprite(width - 75, height - 150, 20, 20);
-  right_but.scale = 0.4;
+  right_but = createSprite(width - 10, height - 150, 20, 20);
+  right_but.scale = 0.1;
   right_but.addImage(right_but_img)
 
   //create a shoot button sprite and set an image.
   shoot_but = createSprite(width - 200, height - 100, 30, 30);
-  shoot_but.scale = 0.1;
+  shoot_but.scale = 0.01;
   shoot_but.addImage(shoot_but_img)
 
   //create a start button sprite and set an image.
   //make it invisible.
   start_but = createSprite(width / 2, height - 200, 30, 30);
-  start_but.scale = 0.3;
+  start_but.scale = 0.1;
   start_but.addImage(start_but_img);
   start_but.visible = false;
 
   reset_but = createSprite(width - 1500, height - 750, 20, 20);
   reset_but.addImage(reset_but_img);
-  reset_but.scale = 0.2;
+  reset_but.scale = 0.1;
 
   next_but = createSprite(width / 2, height - 200, 30, 30);
-  next_but.scale = 0.6;
+  next_but.scale = 0.3;
   next_but.addImage(next_but_img);
   next_but.visible = false;
 
   //create the characters.
   //create the spaceship sprite [PC].
   spaceship = createSprite(width / 2, height - 125, 10, 10);
-  spaceship.scale = 0.3;
+  spaceship.scale = 0.1;
   spaceship.setCollider("rectangle", 0, 0, 350, 300)
   spaceship.addImage(spaceship_img);
 
   //an earth sprite is created.
   earth = createSprite(windowWidth / 2, windowHeight - 100, 20, 20);
   earth.addImage(earth_img);
+  earth.scale = 0.3;
   earth.visible = false;
 
   //create ufos.
@@ -172,21 +173,21 @@ function setup() {
 
   //first ufo.
   ufo1 = createSprite(random(0, width), random(0, height), 20, 20);
-  ufo1.scale = 0.3;
+  ufo1.scale = 0.1;
   ufo1.setCollider("rectangle", 0, 0, 300, 200);
   ufoGroup.add(ufo1);
   ufo1.addImage(ufo_img);
 
   //second ufo.
   ufo2 = createSprite(random(0, width), random(0, height - 500), 20, 20);
-  ufo2.scale = 0.3;
+  ufo2.scale = 0.1;
   ufo2.setCollider("rectangle", 0, 0, 300, 200);
   ufoGroup.add(ufo2);
   ufo2.addImage(ufo_img);
 
   //third ufo.
   ufo3 = createSprite(random(0, width), random(0, height - 500), 20, 20);
-  ufo3.scale = 0.3;
+  ufo3.scale = 0.1;
   ufo3.setCollider("rectangle", 0, 0, 300, 200);
   ufoGroup.add(ufo3);
   ufo3.addImage(ufo_img);
@@ -195,28 +196,28 @@ function setup() {
 
   //fourth ufo.
   ufo4 = createSprite(random(0, width), random(0, height - 500), 20, 20);
-  ufo4.scale = 0.3;
+  ufo4.scale = 0.1;
   ufo4.setCollider("rectangle", 0, 0, 300, 200);
   ufoGroup.add(ufo4);
   ufo4.addImage(ufo_img);
 
   //fifth ufo.
   ufo5 = createSprite(random(0, width), random(0, height - 500), 20, 20);
-  ufo5.scale = 0.3;
+  ufo5.scale = 0.1;
   ufo5.setCollider("rectangle", 0, 0, 300, 200);
   ufoGroup.add(ufo5);
   ufo5.addImage(ufo_img);
 
   //sixth ufo.
   ufo6 = createSprite(random(0, width), random(0, height - 500), 20, 20);
-  ufo6.scale = 0.3;
+  ufo6.scale = 0.1;
   ufo6.setCollider("rectangle", 0, 0, 300, 200);
   ufoGroup.add(ufo6);
   ufo6.addImage(ufo_img);
 
   //seventh ufo.
   ufo7 = createSprite(random(0, width), random(0, height - 500), 20, 20);
-  ufo7.scale = 0.3;
+  ufo7.scale = 0.1;
   ufo7.setCollider("rectangle", 0, 0, 300, 200);
   ufoGroup.add(ufo7);
   ufo7.addImage(ufo_img);
@@ -225,7 +226,7 @@ function setup() {
   //boss ufo, set an animation.
   boss_ufo = createSprite(width / 2, height - 650, 20, 20);
   ufoGroup.add(boss_ufo);
-  boss_ufo.scale = 0.5
+  boss_ufo.scale = 0.2
   boss_ufo.addAnimation("animation", boss_ani);
 
   //create the text sprites.
@@ -233,7 +234,7 @@ function setup() {
   //title of the game.
   title = createDiv("BattleShip!!_👾");
   title.position(width - 1300, height - 700);
-  title.style('font-size', '150px');
+  title.style('font-size', '100px');
   title.style('color', 'red');
 
   //instruction.
