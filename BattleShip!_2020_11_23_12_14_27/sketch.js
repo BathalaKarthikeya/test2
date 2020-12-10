@@ -311,16 +311,16 @@ function draw() {
     boss_ufo.visible = false;
 
     //start button should be visible.
- //   start_but.visible = true;
+    start_but.visible = true;
     title.show();
     press.show();
 
     //if start button is pressed, the game should start and the player can play.
     //play the button pressed sound.
-    // if (mousePressedOver(start_but)) {
-    //   gameState = "play";
-    //   but_pre.play();
-    // }
+     if (mousePressedOver(start_but)) {
+       gameState = "play";
+       but_pre.play();
+     }
 
   }
   //  -----------------------------------------> level 1 <--------------------------------------------------------
